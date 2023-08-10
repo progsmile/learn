@@ -8,3 +8,6 @@
 ```bash
 git rm --cached `git ls-files -ic --exclude-from=.gitignore`
 ```
+
+
+ 
