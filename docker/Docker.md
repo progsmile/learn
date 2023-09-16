@@ -13,8 +13,21 @@ ports:
 ```
 
 ### Dockerfile: Entrypoint + CMD
-Default command + args:
+Default command + args
 ```Dockerfile
 ENTRYPOINT ["php"]
 CMD ["-v"]
+```
+
+### Docker multistage build
+- Use it for making images more lightweight
+```Dockerfile
+FROM golang:1.21 as build
+WORKDIR /src
+COPY . .
+RUN go build -o /bin/hello ./main.go
+
+FROM scratch
+COPY --from=build /bin/hello /bin/hello
+CMD ["/bin/hello"]
 ```
