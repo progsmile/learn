@@ -5,7 +5,7 @@
 
 ### Ports long syntax
 ```yml
-ports:
+ports:docker-php-entrypoint
   - target: 80
     published: 8080
     protocol: tcp
@@ -31,3 +31,17 @@ FROM scratch
 COPY --from=build /bin/hello /bin/hello
 CMD ["/bin/hello"]
 ```
+
+- Copy ready binary instead of manual installation
+```dockerfile
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+```
+
+### Copy with ownership and perms
+
+```dockerfile
+COPY --chmod=755 --chown=www-data:www-data ./ /var/www
+```
+
