@@ -39,6 +39,16 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 ```
 
+### Multi-line condition
+```Dockerfile
+ARG arg
+RUN if [ -z "$arg" ] ; then \
+    echo Argument not provided; \
+  else \
+    echo Argument is $arg; \
+  fi
+```
+
 ### Copy with ownership and perms
 
 ```dockerfile
