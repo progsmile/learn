@@ -12,14 +12,19 @@ ports:docker-php-entrypoint
     mode: host
 ```
 
-### Dockerfile: Entrypoint + CMD
+### Expose few ports
+```Dockerfile
+EXPOSE 1025 8025
+```
+
+### Entrypoint + CMD
 Default command + args
 ```Dockerfile
 ENTRYPOINT ["php"]
 CMD ["-v"]
 ```
 
-### Docker multistage build
+### Multistage build
 - Use it for making images more lightweight
 ```Dockerfile
 FROM golang:1.21 as build
@@ -43,8 +48,11 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 ```Dockerfile
 ARG arg
 RUN if [ -z "$arg" ] ; then \
-    echo Argument not provided; \
+    echo Argument not provided && \
+    echo Argument not provided2 && \
+    echo Argument not provided3; \
   else \
+    echo Argument is ... && \
     echo Argument is $arg; \
   fi
 ```
@@ -54,4 +62,21 @@ RUN if [ -z "$arg" ] ; then \
 ```dockerfile
 COPY --chmod=755 --chown=www-data:www-data ./ /var/www
 ```
+
+---
+
+### Debug container
+- `docker build -t debug --progress plain --no-cache -f ./path/to/Dockerfile .`
+
+### Debug compose service
+- `entrypoint: ["sh", "-c", "sleep infinity"]`
+
+### Run and remove container
+- `docker run -it --rm node bash`
+
+### Inspect service
+- `docker inspect $(docker compose ps -q some-service)`
+
+### Check merged config
+- `docker compose -f ./docker-compose.yml -f ./docker-compose.test.yml config`
 
