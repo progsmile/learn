@@ -1,5 +1,3 @@
-Change shell to zsh
-```shell
-sudo chsh -s $(which zsh) $USER
-```
+List all users
+- `cat /etc/passwd`
 

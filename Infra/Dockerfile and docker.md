@@ -80,3 +80,6 @@ COPY --chmod=755 --chown=www-data:www-data ./ /var/www
 ### Check merged config
 - `docker compose -f ./docker-compose.yml -f ./docker-compose.test.yml config`
 
+### Use Docker api
+- `curl --unix-socket /var/run/docker.sock http://localhost/containers/json | jq`
+
