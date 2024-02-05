@@ -11,3 +11,8 @@ Switch PHP version on Ubuntu
 `update-alternatives --list php`
 `sudo update-alternatives --config php`
 
+
+### PHPUnit
+
+Print test names
+- `--testdox`

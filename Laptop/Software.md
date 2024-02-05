@@ -1,0 +1,2 @@
+- Software: google chrome, docker, zsh, oh my zsh, node.js, guake, obsidian, Stacer, neofetch, 1password, vscode, jet brains toolbox, phpstorm, tmux, gitlab-runner, poetry
+- Setup ssh keys for code repositories

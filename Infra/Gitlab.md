@@ -4,5 +4,20 @@ git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/myuser/mydependentr
 ```
 
 
+### Runners
 
-
+Docker runner config
+```toml
+[[runners]]
+....
+[runners.docker]
+    tls_verify = false
+    image = "docker:24.0-dind"
+    privileged = true
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache"]
+    shm_size = 0
+    network_mtu = 0
+```

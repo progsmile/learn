@@ -16,6 +16,7 @@ SELECT @@character_set_database, @@collation_database;
 Show table structure
 ```mysql
 SHOW CREATE TABLE users;
+DESC users;
 DESCRIBE users;
 SHOW FULL COLUMNS FROM users;
 ```
@@ -33,6 +34,16 @@ SHOW INDEX FROM users;
 Show all db triggers
 ```sql
 SELECT * FROM information_schema.TRIGGERS WHERE TRIGGER_SCHEMA = DATABASE();
+```
+
+Create table from query
+```sql
+CREATE TABLE users_debug AS SELECT * FROM users WHERE is_active = true;
+```
+
+Get running processes
+```sql
+SHOW FULL PROCESSLIST;
 ```
 
 ### Users & Grants
@@ -64,3 +75,4 @@ START TRANSACTION;
 -- Do some sql;
 COMMIT; -- or ROLLBACK;
 ```
+
