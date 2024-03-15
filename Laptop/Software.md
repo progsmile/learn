@@ -1,2 +1,6 @@
-- Software: google chrome, docker, zsh, oh my zsh, node.js, guake, obsidian, Stacer, neofetch, 1password, vscode, jet brains toolbox, phpstorm, tmux, gitlab-runner, poetry
-- Setup ssh keys for code repositories
+- Software:
+	- jet brains toolbox, phpstorm, vscode, 1password, google chrome, obsidian, stacer, virtualbox
+	- docker, node.js, poetry, gitlab-runner
+	- guake (or yakuake), tmux, zsh, oh my zsh, starship, logo-ls, nerd fonts, neofetch
+- Setup ssh and sync repositories
+- Copy files
