@@ -48,6 +48,11 @@ SHOW FULL PROCESSLIST;
 
 ### Users & Grants
 
+Users
+```sql
+SELECT user FROM mysql.user;
+```
+
 Grants
 ```sql
 SHOW GRANTS FOR 'mysql'@'localhost';
@@ -57,6 +62,11 @@ SHOW GRANTS FOR 'mysql'@'localhost';
 GRANT ALL PRIVILEGES ON `DB_NAME`.* TO `user`@`localhost`;
 
 GRANT SELECT (id, title, description), UPDATE (description) ON `DB_NAME`.`books` TO `my_awesome_user`@`%`;
+```
+
+Set password
+```sql
+SET PASSWORD FOR `john`@`%` = 'p@$$w0rd';
 ```
 
 ### mysqldump
@@ -76,3 +86,16 @@ START TRANSACTION;
 COMMIT; -- or ROLLBACK;
 ```
 
+### Profiling
+
+Check status
+```sql
+SHOW VARIABLES LIKE 'profiling';
+SET profiling = 1; -- or 0
+```
+
+Measure sql query
+```sql
+-- Do sql query
+SHOW PROFILES;
+```

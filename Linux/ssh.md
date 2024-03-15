@@ -10,4 +10,12 @@
 ### Copy public key to host
 - `ssh-copy-id -i ~/.ssh/rsa_id.pub user@example.com`
 
+### Connect with alias
+- Set alias in config
+```
+Host my_host
+  User my_user
+  HostName 111.222.111.222
+```
+- `ssh my_host`
 
