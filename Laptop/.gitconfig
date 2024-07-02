@@ -1,0 +1,7 @@
+[user]
+	email = denis.klimenko.dx@gmail.com
+	name = Denys Klymenko
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
