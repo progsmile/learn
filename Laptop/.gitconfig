@@ -1,3 +1,9 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+[commit]
+	gpgsign = true
 [user]
 	email = denis.klimenko.dx@gmail.com
 	name = Denys Klymenko
@@ -5,3 +11,5 @@
 	autoSetupRemote = true
 [pull]
 	rebase = true
+[core]
+        editor = vim

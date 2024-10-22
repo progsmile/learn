@@ -77,6 +77,9 @@ COPY --chmod=755 --chown=www-data:www-data ./ /var/www
 ### Inspect service
 - `docker inspect $(docker compose ps -q some-service)`
 
+### Check service config
+- `docker compose config my_web_app`
+
 ### Check merged config
 - `docker compose -f ./docker-compose.yml -f ./docker-compose.test.yml config`
 

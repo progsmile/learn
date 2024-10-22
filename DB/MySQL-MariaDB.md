@@ -46,6 +46,12 @@ Get running processes
 SHOW FULL PROCESSLIST;
 ```
 
+Kill process by id
+```sql
+KILL {id};
+```
+
+
 ### Users & Grants
 
 Users
