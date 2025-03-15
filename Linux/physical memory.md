@@ -5,5 +5,5 @@
 - `findmnt`
 
 ### Directory and files size
-- `du -sh`
+- `du -sh <dir_name>`
 - `du -sh -- *`
